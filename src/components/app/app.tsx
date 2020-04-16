@@ -2,6 +2,8 @@ import React from 'react'
 import './css/app.css'
 import ItemContainer from '../item/itemContainer'
 import RefreshButton from '../refresh/refreshButton'
+import { items } from './api/items'
+import { buildData } from './data/buildData'
 
 const App: React.FC = () => {
   const refreshPage = () => {
@@ -14,7 +16,7 @@ const App: React.FC = () => {
         <RefreshButton handleEvent={refreshPage} />
       </div>
       <div className="item_container">
-        <ItemContainer />
+        <ItemContainer items={buildData(items)} />
       </div>
     </>
   )

@@ -1,4 +1,22 @@
 .item {
   margin: 1%;
+  text-align: left;
   border: 2px solid red;
+}
+
+.name {
+  margin-left: 0.5%;
+  margin-right: 4%;
+}
+
+.city {
+  margin: 4%;
+}
+
+.bm_price {
+  margin: 4%;
+}
+
+.profit {
+  margin: 4%;
 }
