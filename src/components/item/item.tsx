@@ -10,7 +10,7 @@ const Item: FunctionComponent<ItemProps> = ({ item }) => (
     <span className="name">{item.item_id}</span>
     <span className="city">{item.city + ' price: ' + item.sell_price_min}</span>
     <span className="bm_price">
-      {'Black Market price: ' + item.black_market_buy_price_min}
+      {'Black Market price: ' + item.black_market_buy_price_max}
     </span>
     <span className="profit">{'profit: ' + item.profit}</span>
   </div>
