@@ -1,24 +1,29 @@
 .item {
-  margin: 1%;
+  margin: 0.5%;
   border: 2px solid gray;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .name {
+  grid-column-start: 1;
 }
 
 .city {
+  grid-column-start: 2;
 }
 
 .city_time {
+  grid-column-start: 3;
 }
 
 .bm_price {
+  grid-column-start: 4;
 }
 .bm_time {
+  grid-column-start: 5;
 }
 
 .profit {
+  grid-column-start: 6;
 }

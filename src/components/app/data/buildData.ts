@@ -6,6 +6,7 @@ export function buildData(items: any) {
   const organize = (item: any) => {
     if (organizedItems.has(item.item_id)) {
       let data = getCurrentItem(item)
+
       if (isItemCheaper(item, data)) updatePrice(item, data)
     } else {
       // This implies that we are always making our API calls with the
@@ -33,6 +34,7 @@ export function buildData(items: any) {
     data.city_sell_price_min = item.sell_price_min
     data.city_time = buildDate(item.sell_price_min_date)
     data.profit = data.black_market_sell_price_min - data.city_sell_price_min
+
     organizedItems.set(item.item_id, data)
   }
 
