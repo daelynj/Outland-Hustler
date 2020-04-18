@@ -8,12 +8,13 @@ interface ItemProps {
 const Item: FunctionComponent<ItemProps> = ({ item }) => (
   <div className="item">
     <span className="name">{item.item_id}</span>
+    <span className="quality">{'quality: ' + item.quality}</span>
     <span className="city">
       {item.city + ' price: ' + item.city_sell_price_min}
     </span>
     <span className="city_time">{'updated: ' + item.city_time}</span>
     <span className="bm_price">
-      {'Black Market price: ' + item.black_market_sell_price_min}
+      {'BM price: ' + item.black_market_sell_price_min}
     </span>
     <span className="bm_time">{'updated: ' + item.black_market_time}</span>
     <span className="profit">{'profit: ' + item.profit}</span>

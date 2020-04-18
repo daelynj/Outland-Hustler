@@ -33,6 +33,7 @@ export function buildData(items: any) {
     data.city = item.city
     data.city_sell_price_min = item.sell_price_min
     data.city_time = buildDate(item.sell_price_min_date)
+    data.quality = item.quality
     data.profit = data.black_market_sell_price_min - data.city_sell_price_min
 
     organizedItems.set(item.item_id, data)

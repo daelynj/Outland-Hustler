@@ -2,28 +2,32 @@
   margin: 0.5%;
   border: 2px solid gray;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .name {
   grid-column-start: 1;
 }
 
-.city {
+.quality {
   grid-column-start: 2;
 }
 
-.city_time {
+.city {
   grid-column-start: 3;
 }
 
-.bm_price {
+.city_time {
   grid-column-start: 4;
 }
-.bm_time {
+
+.bm_price {
   grid-column-start: 5;
+}
+.bm_time {
+  grid-column-start: 6;
 }
 
 .profit {
-  grid-column-start: 6;
+  grid-column-start: 7;
 }
