@@ -1,12 +1,12 @@
 .item_container {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   border: 2px solid blue;
 }
 
 .refresh {
   margin-top: 5%;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 0.5%;
 }
