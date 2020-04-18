@@ -11,11 +11,11 @@ const Item: FunctionComponent<ItemProps> = ({ item }) => (
     <span className="city">
       {item.city + ' price: ' + item.city_sell_price_min}
     </span>
-    <span>date placeholder</span>
+    <span className="city_time">{'updated: ' + item.city_time}</span>
     <span className="bm_price">
       {'Black Market price: ' + item.black_market_sell_price_min}
     </span>
-    <span className="bm_date">date placeholder</span>
+    <span className="bm_time">{'updated: ' + item.black_market_time}</span>
     <span className="profit">{'profit: ' + item.profit}</span>
   </div>
 )

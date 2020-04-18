@@ -1,22 +1,24 @@
 .item {
   margin: 1%;
-  text-align: left;
-  border: 2px solid red;
+  border: 2px solid gray;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .name {
-  margin-left: 0.5%;
-  margin-right: 4%;
 }
 
 .city {
-  margin: 4%;
+}
+
+.city_time {
 }
 
 .bm_price {
-  margin: 4%;
+}
+.bm_time {
 }
 
 .profit {
-  margin: 4%;
 }
