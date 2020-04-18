@@ -1,3 +1,5 @@
+import { buildDate } from './buildDate'
+
 export function buildData(items: any) {
   const organizedItems = new Map()
 
@@ -22,14 +24,14 @@ export function buildData(items: any) {
     city_sell_price_min: null,
     city_time: null,
     black_market_sell_price_min: item.sell_price_min,
-    black_market_time: item.sell_price_min_date,
+    black_market_time: buildDate(item.sell_price_min_date),
     profit: null,
   })
 
   const updatePrice = (item: any, data: any) => {
     data.city = item.city
     data.city_sell_price_min = item.sell_price_min
-    data.city_time = item.sell_price_min_date
+    data.city_time = buildDate(item.sell_price_min_date)
     data.profit = data.black_market_sell_price_min - data.city_sell_price_min
     organizedItems.set(item.item_id, data)
   }
