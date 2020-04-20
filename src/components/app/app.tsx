@@ -6,7 +6,7 @@ import { fetchResource } from './api/fetchResource'
 import { buildData } from './data/buildData'
 
 const App: React.FC = () => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(new Map())
 
   const refreshPage = () => {
     window.location.reload(false)
@@ -14,15 +14,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     fetchResource('no url yet', 'no path yet')
-      .then((userData) => {
-        setItems(userData)
+      .then((userData: any) => {
+        setItems(buildData(userData))
       })
       .catch((error) => {
         console.log(error.message)
         console.log(error.status)
         console.log(error.response)
       })
-  })
+  }, [])
 
   return (
     <>
@@ -30,7 +30,7 @@ const App: React.FC = () => {
         <RefreshButton handleEvent={refreshPage} />
       </div>
       <div className="item_container">
-        <ItemContainer items={buildData(items)} />
+        <ItemContainer items={items} />
       </div>
     </>
   )
