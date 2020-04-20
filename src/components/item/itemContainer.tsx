@@ -10,7 +10,7 @@ interface ItemContainerProps {
 
 const ItemContainer: FunctionComponent<ItemContainerProps> = ({ items }) => {
   const buildItems = () => {
-    let array = Array.from(items.values())
+    let array = Array.from(items.values()).flat()
 
     array.sort(function (a: any, b: any) {
       if (a.profit > b.profit) {
