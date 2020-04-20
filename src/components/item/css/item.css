@@ -2,7 +2,15 @@
   margin: 0.5%;
   border: 2px solid gray;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 18% 1fr 13% 0.8fr 1fr 0.8fr repeat(2, 1fr);
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }
 
 .name {

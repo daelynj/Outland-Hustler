@@ -1,2 +1,38 @@
-.items {
+.header {
+  margin: 0.5%;
+  border: 2px solid gray;
+  display: grid;
+  grid-template-columns: 18% 1fr 13% 0.8fr 1fr 0.8fr repeat(2, 1fr);
+  font-weight: bold;
+}
+
+.name {
+  grid-column-start: 1;
+}
+
+.quality {
+  grid-column-start: 2;
+}
+
+.city {
+  grid-column-start: 3;
+}
+
+.city_price {
+  grid-column-start: 4;
+}
+
+.city_time {
+  grid-column-start: 5;
+}
+
+.bm_price {
+  grid-column-start: 6;
+}
+.bm_time {
+  grid-column-start: 7;
+}
+
+.profit {
+  grid-column-start: 8;
 }

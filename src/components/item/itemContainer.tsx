@@ -27,7 +27,21 @@ const ItemContainer: FunctionComponent<ItemContainerProps> = ({ items }) => {
     ))
   }
 
-  return <div className="items">{buildItems()}</div>
+  return (
+    <>
+      <div className="header">
+        <span className="name">Name</span>
+        <span className="quality">Quality</span>
+        <span className="city">City</span>
+        <span className="city_price">Price</span>
+        <span className="city_time">Last updated</span>
+        <span className="bm_price">BM price</span>
+        <span className="bm_time">Last updated</span>
+        <span className="profit">Profit</span>
+      </div>
+      <div className="items">{buildItems()}</div>
+    </>
+  )
 }
 
 export default ItemContainer
