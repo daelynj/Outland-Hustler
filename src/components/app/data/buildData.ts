@@ -7,16 +7,54 @@ export function buildData(items: any) {
     if (organizedItems.has(item.item_id)) {
       let data = getCurrentItem(item)
 
-      if (isItemCheaper(item, data)) updatePrice(item, data)
+      if (item.city === 'Black Market') {
+        attachNewJSON(data, item)
+      } else if (isItemCheaper(item, data)) updatePrice(item, data)
     } else {
-      // This implies that we are always making our API calls with the
-      // Black Market first in the list - not ideal
       setNewJSON(item)
     }
   }
 
+  const updatePrice = (item: any, data: any) => {
+    let dataPoint = data[item.quality - 1]
+
+    dataPoint.city = item.city
+    dataPoint.city_sell_price_min = item.sell_price_min
+    dataPoint.city_time = buildDate(item.sell_price_min_date)
+
+    if (dataPoint.city_sell_price_min === 0) {
+      dataPoint.profit = 0
+    } else {
+      dataPoint.profit =
+        dataPoint.black_market_sell_price_min - dataPoint.city_sell_price_min
+    }
+
+    data[item.quality - 1] = dataPoint
+
+    organizedItems.set(item.item_id, data)
+  }
+
+  const isItemCheaper = (item: any, data: any) => {
+    if (item.quality === data[item.quality - 1].quality) {
+      let currentItem = data[item.quality - 1]
+
+      return (
+        item.sell_price_min < currentItem.city_sell_price_min ||
+        currentItem.city_sell_price_min === null
+      )
+    }
+    return true
+  }
+
+  const getCurrentItem = (item: any) => organizedItems.get(item.item_id)
+
+  const attachNewJSON = (data: any, item: any) => {
+    data.push(buildBaseJSON(item))
+    organizedItems.set(item.item_id, data)
+  }
+
   const setNewJSON = (item: any) =>
-    organizedItems.set(item.item_id, buildBaseJSON(item))
+    organizedItems.set(item.item_id, [buildBaseJSON(item)])
 
   const buildBaseJSON = (item: any) => ({
     item_id: item.item_id,
@@ -28,22 +66,6 @@ export function buildData(items: any) {
     black_market_time: buildDate(item.sell_price_min_date),
     profit: null,
   })
-
-  const updatePrice = (item: any, data: any) => {
-    data.city = item.city
-    data.city_sell_price_min = item.sell_price_min
-    data.city_time = buildDate(item.sell_price_min_date)
-    data.quality = item.quality
-    data.profit = data.black_market_sell_price_min - data.city_sell_price_min
-
-    organizedItems.set(item.item_id, data)
-  }
-
-  const isItemCheaper = (item: any, data: any) =>
-    item.sell_price_min < data.city_sell_price_min ||
-    data.city_sell_price_min === null
-
-  const getCurrentItem = (item: any) => organizedItems.get(item.item_id)
 
   items.forEach(organize)
 
