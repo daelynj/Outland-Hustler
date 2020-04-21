@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react'
 import './css/app.css'
 import ItemContainer from '../item/itemContainer'
 import RefreshButton from '../refresh/refreshButton'
-import { fetchResource } from './api/fetchResource'
+import { PriceClient } from './api/priceClient'
 import { buildData } from './data/buildData'
 
 const App: React.FC = () => {
   const [items, setItems] = useState(new Map())
+  const [priceClient] = useState(new PriceClient())
 
   const refreshPage = () => {
     window.location.reload(false)
   }
 
   useEffect(() => {
-    fetchResource('no url yet', 'no path yet')
-      .then((userData: any) => {
+    let itemsArray = ['T4_BAG', 'T5_BAG']
+    let citiesArray = ['Black Market', 'Bridgewatch']
+    let qualitiesArray = [1, 2]
+
+    priceClient
+      ._getPriceData(itemsArray, citiesArray, qualitiesArray)
+      .then((userData) => {
         setItems(buildData(userData))
       })
       .catch((error) => {
@@ -22,7 +28,7 @@ const App: React.FC = () => {
         console.log(error.status)
         console.log(error.response)
       })
-  }, [])
+  }, [priceClient])
 
   return (
     <>
