@@ -4,10 +4,12 @@ import ItemContainer from '../item/itemContainer'
 import RefreshButton from '../refresh/refreshButton'
 import { PriceClient } from './api/priceClient'
 import { buildData } from './data/buildData'
+import { GameInfoClient } from './api/gameInfoClient'
 
 const App: React.FC = () => {
   const [items, setItems] = useState(new Map())
   const [priceClient] = useState(new PriceClient())
+  const [gameInfoClient] = useState(new GameInfoClient())
 
   const refreshPage = () => {
     window.location.reload(false)
@@ -26,7 +28,9 @@ const App: React.FC = () => {
       .catch((error) => {
         console.log(error)
       })
-  }, [priceClient])
+
+    //userData.localizedNames['EN-US']
+  }, [priceClient, gameInfoClient])
 
   return (
     <>
