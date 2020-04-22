@@ -24,9 +24,7 @@ const App: React.FC = () => {
         setItems(buildData(userData))
       })
       .catch((error) => {
-        console.log(error.message)
-        console.log(error.status)
-        console.log(error.response)
+        console.log(error)
       })
   }, [priceClient])
 
