@@ -16,20 +16,48 @@ const App: React.FC = () => {
   }
 
   useEffect(() => {
-    let itemsArray = ['T4_BAG', 'T5_BAG']
-    let citiesArray = ['Black Market', 'Bridgewatch']
+    let itemsArray = [
+      'T4_ARMOR_PLATE_SET1',
+      'T5_ARMOR_PLATE_SET1',
+      'T6_ARMOR_PLATE_SET1',
+      'T7_ARMOR_PLATE_SET1',
+    ]
+    let citiesArray = [
+      'Black Market',
+      'Bridgewatch',
+      'Fort Sterling',
+      'Caerleon',
+      'Martlock',
+    ]
     let qualitiesArray = [1, 2]
+    let itemNames = new Map()
+    let itemData: String[] = []
 
     priceClient
       ._getPriceData(itemsArray, citiesArray, qualitiesArray)
-      .then((userData) => {
-        setItems(buildData(userData))
+      .then((itemDataResponse) => {
+        itemData = itemDataResponse
+
+        itemsArray.forEach(function (item) {
+          gameInfoClient
+            ._getItemData(item)
+            .then((nameDataResponse) => {
+              itemNames.set(
+                nameDataResponse.uniqueName,
+                nameDataResponse.localizedNames['EN-US']
+              )
+
+              if (itemsArray[itemsArray.length - 1] === item)
+                setItems(buildData(itemData, itemNames))
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+        })
       })
       .catch((error) => {
         console.log(error)
       })
-
-    //userData.localizedNames['EN-US']
   }, [priceClient, gameInfoClient])
 
   return (
