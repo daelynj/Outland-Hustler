@@ -26,7 +26,7 @@ const Item: FunctionComponent<ItemProps> = ({ item }) => {
   const determineSign = (profit: number) => (profit > 0 ? '+' + profit : profit)
   return (
     <div className="item">
-      <span className="name">{item.item_id}</span>
+      <span className="name">{item.friendly_name}</span>
       <span className="quality">{qualityToText(item.quality)}</span>
       <span className="city">{item.city}</span>
       <span className="city_price">{item.city_sell_price_min}</span>
