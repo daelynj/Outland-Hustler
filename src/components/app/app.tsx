@@ -46,9 +46,9 @@ const App: React.FC = () => {
                 nameDataResponse.uniqueName,
                 nameDataResponse.localizedNames['EN-US']
               )
-
-              if (itemsArray[itemsArray.length - 1] === item)
-                setItems(buildData(itemData, itemNames))
+            })
+            .then(() => {
+              setItems(buildData(itemData, itemNames))
             })
             .catch((error) => {
               console.log(error)
