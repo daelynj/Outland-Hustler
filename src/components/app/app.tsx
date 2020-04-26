@@ -2,71 +2,75 @@ import React, { useEffect, useState } from 'react'
 import './css/app.css'
 import ItemContainer from '../item/itemContainer'
 import RefreshButton from '../refresh/refreshButton'
+import ChoiceContainer from '../choice/choiceContainer'
 import { PriceClient } from './api/priceClient'
 import { buildData } from './data/buildData'
 import { GameInfoClient } from './api/gameInfoClient'
 
 const App: React.FC = () => {
-  const [items, setItems] = useState(new Map())
   const [priceClient] = useState(new PriceClient())
   const [gameInfoClient] = useState(new GameInfoClient())
+  const [organizedItems, setOrganizedItems] = useState(new Map())
+  const [items, setItems] = useState([])
+  const [cities, setCities] = useState([])
+  const [qualities, setQualities] = useState([])
 
   const refreshPage = () => {
     window.location.reload(false)
   }
 
   useEffect(() => {
-    let itemsArray = [
-      'T4_ARMOR_PLATE_SET1',
-      'T5_ARMOR_PLATE_SET1',
-      'T6_ARMOR_PLATE_SET1',
-      'T7_ARMOR_PLATE_SET1',
-    ]
-    let citiesArray = [
-      'Black Market',
-      'Bridgewatch',
-      'Fort Sterling',
-      'Caerleon',
-      'Martlock',
-    ]
-    let qualitiesArray = [1, 2]
     let itemNames = new Map()
     let itemData: String[] = []
+    console.log(items)
+    console.log(cities)
+    console.log(qualities)
+    if (items.length > 0 && cities.length > 0 && qualities.length > 0) {
+      priceClient
+        ._getPriceData(items, ['Black Market'].concat(cities), qualities)
+        .then((itemDataResponse) => {
+          itemData = itemDataResponse
 
-    priceClient
-      ._getPriceData(itemsArray, citiesArray, qualitiesArray)
-      .then((itemDataResponse) => {
-        itemData = itemDataResponse
-
-        itemsArray.forEach(function (item) {
-          gameInfoClient
-            ._getItemData(item)
-            .then((nameDataResponse) => {
-              itemNames.set(
-                nameDataResponse.uniqueName,
-                nameDataResponse.localizedNames['EN-US']
-              )
-            })
-            .then(() => {
-              setItems(buildData(itemData, itemNames))
-            })
-            .catch((error) => {
-              console.log(error)
-            })
+          items.forEach(function (item: any) {
+            gameInfoClient
+              ._getItemData(item)
+              .then((nameDataResponse) => {
+                itemNames.set(
+                  nameDataResponse.uniqueName,
+                  nameDataResponse.localizedNames['EN-US']
+                )
+              })
+              .then(() => {
+                setOrganizedItems(buildData(itemData, itemNames))
+              })
+              .catch((error) => {
+                console.log(error)
+              })
+          })
         })
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [priceClient, gameInfoClient])
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+  }, [priceClient, gameInfoClient, items, qualities, cities])
+
+  const completeEntriesExist = () =>
+    items.length > 0 && cities.length > 0 && qualities.length > 0
 
   return (
     <>
       <div className="refresh">
         <RefreshButton handleEvent={refreshPage} />
       </div>
+      <div className="choice_container">
+        <ChoiceContainer
+          setItems={setItems}
+          setQualities={setQualities}
+          setCities={setCities}
+        />
+      </div>
       <div className="item_container">
-        <ItemContainer items={items} />
+        {completeEntriesExist() && <ItemContainer items={organizedItems} />}
       </div>
     </>
   )

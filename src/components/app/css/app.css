@@ -1,7 +1,10 @@
-.item_container {
+.choice_container {
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 0.5%;
   border: 2px solid black;
+  display: grid;
+  grid-template-columns: 34% 32% 34%;
 }
 
 .refresh {
@@ -9,4 +12,10 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 0.5%;
+}
+
+.item_container {
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 2px solid black;
 }
