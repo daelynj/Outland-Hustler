@@ -22,9 +22,7 @@ const App: React.FC = () => {
   useEffect(() => {
     let itemNames = new Map()
     let itemData: String[] = []
-    console.log(items)
-    console.log(cities)
-    console.log(qualities)
+
     if (items.length > 0 && cities.length > 0 && qualities.length > 0) {
       priceClient
         ._getPriceData(items, ['Black Market'].concat(cities), qualities)
