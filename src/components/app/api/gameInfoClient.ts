@@ -4,13 +4,13 @@ export class GameInfoClient {
   BASE_URL = 'https://gameinfo.albiononline.com/api/gameinfo/'
   PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
 
-  _getItemData = (item: String) => fetchResource(this.buildItemDataURL(item))
+  _getItemData = (item: string) => fetchResource(this.buildItemDataURL(item))
 
-  _getItemPicture = (item: String) =>
+  _getItemPicture = (item: string) =>
     fetchResource(this.buildItemPictureURL(item))
 
-  buildItemDataURL = (item: String) =>
+  buildItemDataURL = (item: string) =>
     this.PROXY_URL + this.BASE_URL + 'items/' + item + '/data'
 
-  buildItemPictureURL = (item: String) => this.PROXY_URL + this.BASE_URL + item
+  buildItemPictureURL = (item: string) => this.PROXY_URL + this.BASE_URL + item
 }

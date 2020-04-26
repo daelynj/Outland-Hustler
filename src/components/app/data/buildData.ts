@@ -1,6 +1,6 @@
 import { buildDate } from './buildDate'
 
-export function buildData(items: any, itemNames: any) {
+export function buildData(items: string[], itemNames: any) {
   const organizedItems = new Map()
 
   const organize = (item: any) => {
