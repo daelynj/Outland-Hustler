@@ -1,23 +1,6 @@
 import DropdownSearch from './dropdownSearch'
 import React, { FunctionComponent } from 'react'
-
-const items = [
-  {
-    key: 'T6_ARMOR_PLATE_SET1',
-    text: "Master's Soldier Armor",
-    value: 'T6_ARMOR_PLATE_SET1',
-  },
-  {
-    key: 'T5_ARMOR_CLOTH_SET2',
-    text: "Expert's Cleric Robe",
-    value: 'T5_ARMOR_CLOTH_SET2',
-  },
-  //   {
-  //     key: 'Grandmasters Mage Robe',
-  //     text: 'Grandmasters Mage Robe',
-  //     value: 'T7_ARMOR_CLOTH_SET3',
-  //   },
-]
+import { items } from './items/allItems'
 
 const qualities = [
   { key: '1', text: 'Normal', value: 1 },
