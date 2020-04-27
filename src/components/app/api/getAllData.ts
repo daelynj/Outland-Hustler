@@ -4,6 +4,7 @@ import { GameInfoClient } from './gameInfoClient'
 
 export const getAllData = (
   setOrganizedItems: any,
+  setLoading: any,
   items: string[],
   qualities: number[],
   cities: string[]
@@ -14,6 +15,8 @@ export const getAllData = (
   let itemData: string[] = []
 
   if (items.length > 0 && cities.length > 0 && qualities.length > 0) {
+    setLoading(true)
+
     priceClient
       ._getPriceData(items, ['Black Market'].concat(cities), qualities)
       .then((itemDataResponse) => {
@@ -30,6 +33,7 @@ export const getAllData = (
             })
             .then(() => {
               setOrganizedItems(buildData(itemData, itemNames))
+              setLoading(false)
             })
             .catch((error) => {
               console.log(error)

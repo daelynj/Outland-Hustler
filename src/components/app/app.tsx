@@ -10,13 +10,14 @@ const App: React.FC = () => {
   const [items, setItems] = useState([])
   const [cities, setCities] = useState([])
   const [qualities, setQualities] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const refreshPage = () => {
     window.location.reload(false)
   }
 
   useEffect(() => {
-    getAllData(setOrganizedItems, items, qualities, cities)
+    getAllData(setOrganizedItems, setLoading, items, qualities, cities)
   }, [items, qualities, cities])
 
   const completeEntriesExist = () =>
@@ -35,7 +36,9 @@ const App: React.FC = () => {
         />
       </div>
       <div className="item_container">
-        {completeEntriesExist() && <ItemContainer items={organizedItems} />}
+        {!loading && completeEntriesExist() && (
+          <ItemContainer items={organizedItems} />
+        )}
       </div>
     </>
   )
