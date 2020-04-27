@@ -33,12 +33,14 @@ export const getAllData = (
             })
             .then(() => {
               setOrganizedItems(buildData(itemData, itemNames))
-              setLoading(false)
             })
             .catch((error) => {
               console.log(error)
             })
         })
+      })
+      .then(() => {
+        setLoading(false)
       })
       .catch((error) => {
         console.log(error)
