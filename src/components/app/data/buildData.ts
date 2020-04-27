@@ -3,20 +3,30 @@ import { buildDate } from './buildDate'
 export function buildData(items: string[], itemNames: any) {
   const organizedItems = new Map()
 
-  const organize = (item: any) => {
-    if (organizedItems.has(item.item_id)) {
-      let data = getCurrentItem(item)
+  const organize = (incomingItem: any) => {
+    if (organizedItems.has(incomingItem.item_id)) {
+      let itemGroup = getCurrentItemGroup(incomingItem)
 
-      if (item.city === 'Black Market') {
-        attachNewJSON(data, item)
-      } else if (isItemCheaper(item, data)) updatePrice(item, data)
+      if (incomingItem.city === 'Black Market') {
+        attachNewJSON(itemGroup, incomingItem)
+      } else {
+        let existingItemEntry = itemGroup.filter(
+          getItemByQuality(incomingItem.quality)
+        )[0]
+
+        if (existingItemEntry.profit === null) {
+          updatePrice(incomingItem, itemGroup)
+        } else if (isItemCheaper(incomingItem, existingItemEntry)) {
+          updatePrice(incomingItem, itemGroup)
+        }
+      }
     } else {
-      setNewJSON(item)
+      setNewJSON(incomingItem)
     }
   }
 
-  const updatePrice = (item: any, data: any) => {
-    let dataPoint = data[item.quality - 1]
+  const updatePrice = (item: any, itemGroup: any) => {
+    let dataPoint = itemGroup.filter(getItemByQuality(item.quality))[0]
 
     dataPoint.city = item.city
     dataPoint.city_sell_price_min = item.sell_price_min
@@ -29,24 +39,38 @@ export function buildData(items: string[], itemNames: any) {
         dataPoint.black_market_sell_price_min - dataPoint.city_sell_price_min
     }
 
-    data[item.quality - 1] = dataPoint
+    let indexOfItemToChange = itemGroup.filter(
+      getIndexOfItemByQuality(dataPoint.quality)
+    )[0]
 
-    organizedItems.set(item.item_id, data)
+    itemGroup[indexOfItemToChange] = dataPoint
+
+    organizedItems.set(item.item_id, itemGroup)
   }
 
-  const isItemCheaper = (item: any, data: any) => {
-    if (item.quality === data[item.quality - 1].quality) {
-      let currentItem = data[item.quality - 1]
+  const isItemCheaper = (itemToCompare: any, existingItem: any) =>
+    itemToCompare.sell_price_min < existingItem.city_sell_price_min ||
+    existingItem.city_sell_price_min === null
 
-      return (
-        item.sell_price_min < currentItem.city_sell_price_min ||
-        currentItem.city_sell_price_min === null
-      )
+  const getIndexOfItemByQuality = (quality: any) => (
+    element: any,
+    index: any
+  ) => {
+    if (quality === element.quality) {
+      return index
     }
-    return true
   }
 
-  const getCurrentItem = (item: any) => organizedItems.get(item.item_id)
+  const getItemByQuality = (quality: any) => (element: any) => {
+    if (quality === element.quality) {
+      return element
+    }
+  }
+
+  //   const getItemByQuality = (quality: any) => (element: any) =>
+  //   quality === element.quality ? element : false
+
+  const getCurrentItemGroup = (item: any) => organizedItems.get(item.item_id)
 
   const attachNewJSON = (data: any, item: any) => {
     data.push(buildBaseJSON(item))
