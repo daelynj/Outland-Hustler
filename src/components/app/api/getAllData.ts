@@ -24,7 +24,10 @@ export const getAllData = (
         itemData = itemDataResponse
 
         items.forEach(function (item: any) {
-          if (itemNames.has(item)) return
+          if (itemNames.has(item)) {
+            setOrganizedItems(buildData(itemData, itemNames))
+            return
+          }
 
           gameInfoClient
             ._getItemData(item)
