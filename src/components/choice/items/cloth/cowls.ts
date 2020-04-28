@@ -19,7 +19,6 @@ export const cowls = [
     text: "Grandmaster's Scholar Cowl",
     value: 'T7_HEAD_CLOTH_SET1',
   },
-
   {
     key: 'T4_HEAD_CLOTH_SET2',
     text: "Adept's Cleric Cowl",
@@ -59,5 +58,65 @@ export const cowls = [
     key: 'T7_HEAD_CLOTH_SET3',
     text: "Grandmaster's Mage Cowl",
     value: 'T7_HEAD_CLOTH_SET3',
+  },
+  {
+    key: 'T4_HEAD_CLOTH_SET1@1',
+    text: "Adept's Scholar Cowl@1",
+    value: 'T4_HEAD_CLOTH_SET1@1',
+  },
+  {
+    key: 'T5_HEAD_CLOTH_SET1@1',
+    text: "Expert's Scholar Cowl@1",
+    value: 'T5_HEAD_CLOTH_SET1@1',
+  },
+  {
+    key: 'T6_HEAD_CLOTH_SET1@1',
+    text: "Master's Scholar Cowl@1",
+    value: 'T6_HEAD_CLOTH_SET1@1',
+  },
+  {
+    key: 'T7_HEAD_CLOTH_SET1@1',
+    text: "Grandmaster's Scholar Cowl@1",
+    value: 'T7_HEAD_CLOTH_SET1@1',
+  },
+  {
+    key: 'T4_HEAD_CLOTH_SET2@1',
+    text: "Adept's Cleric Cowl@1",
+    value: 'T4_HEAD_CLOTH_SET2@1',
+  },
+  {
+    key: 'T5_HEAD_CLOTH_SET2@1',
+    text: "Expert's Cleric Cowl@1",
+    value: 'T5_HEAD_CLOTH_SET2@1',
+  },
+  {
+    key: 'T6_HEAD_CLOTH_SET2@1',
+    text: "Master's Cleric Cowl@1",
+    value: 'T6_HEAD_CLOTH_SET2@1',
+  },
+  {
+    key: 'T7_HEAD_CLOTH_SET2@1',
+    text: "Grandmaster's Cleric Cowl@1",
+    value: 'T7_HEAD_CLOTH_SET2@1',
+  },
+  {
+    key: 'T4_HEAD_CLOTH_SET3@1',
+    text: "Adept's Mage Cowl@1",
+    value: 'T4_HEAD_CLOTH_SET3@1',
+  },
+  {
+    key: 'T5_HEAD_CLOTH_SET3@1',
+    text: "Expert's Mage Cowl@1",
+    value: 'T5_HEAD_CLOTH_SET3@1',
+  },
+  {
+    key: 'T6_HEAD_CLOTH_SET3@1',
+    text: "Master's Mage Cowl@1",
+    value: 'T6_HEAD_CLOTH_SET3@1',
+  },
+  {
+    key: 'T7_HEAD_CLOTH_SET3@1',
+    text: "Grandmaster's Mage Cowl@1",
+    value: 'T7_HEAD_CLOTH_SET3@1',
   },
 ]
