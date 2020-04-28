@@ -19,7 +19,6 @@ export const sandals = [
     text: "Grandmaster's Scholar Sandals",
     value: 'T7_SHOES_CLOTH_SET1',
   },
-
   {
     key: 'T4_SHOES_CLOTH_SET2',
     text: "Adept's Cleric Sandals",
@@ -59,5 +58,65 @@ export const sandals = [
     key: 'T7_SHOES_CLOTH_SET3',
     text: "Grandmaster's Mage Sandals",
     value: 'T7_SHOES_CLOTH_SET3',
+  },
+  {
+    key: 'T4_SHOES_CLOTH_SET1@1',
+    text: "Adept's Scholar Sandals@1",
+    value: 'T4_SHOES_CLOTH_SET1@1',
+  },
+  {
+    key: 'T5_SHOES_CLOTH_SET1@1',
+    text: "Expert's Scholar Sandals@1",
+    value: 'T5_SHOES_CLOTH_SET1@1',
+  },
+  {
+    key: 'T6_SHOES_CLOTH_SET1@1',
+    text: "Master's Scholar Sandals@1",
+    value: 'T6_SHOES_CLOTH_SET1@1',
+  },
+  {
+    key: 'T7_SHOES_CLOTH_SET1@1',
+    text: "Grandmaster's Scholar Sandals@1",
+    value: 'T7_SHOES_CLOTH_SET1@1',
+  },
+  {
+    key: 'T4_SHOES_CLOTH_SET2@1',
+    text: "Adept's Cleric Sandals@1",
+    value: 'T4_SHOES_CLOTH_SET2@1',
+  },
+  {
+    key: 'T5_SHOES_CLOTH_SET2@1',
+    text: "Expert's Cleric Sandals@1",
+    value: 'T5_SHOES_CLOTH_SET2@1',
+  },
+  {
+    key: 'T6_SHOES_CLOTH_SET2@1',
+    text: "Master's Cleric Sandals@1",
+    value: 'T6_SHOES_CLOTH_SET2@1',
+  },
+  {
+    key: 'T7_SHOES_CLOTH_SET2@1',
+    text: "Grandmaster's Cleric Sandals@1",
+    value: 'T7_SHOES_CLOTH_SET2@1',
+  },
+  {
+    key: 'T4_SHOES_CLOTH_SET3@1',
+    text: "Adept's Mage Sandals@1",
+    value: 'T4_SHOES_CLOTH_SET3@1',
+  },
+  {
+    key: 'T5_SHOES_CLOTH_SET3@1',
+    text: "Expert's Mage Sandals@1",
+    value: 'T5_SHOES_CLOTH_SET3@1',
+  },
+  {
+    key: 'T6_SHOES_CLOTH_SET3@1',
+    text: "Master's Mage Sandals@1",
+    value: 'T6_SHOES_CLOTH_SET3@1',
+  },
+  {
+    key: 'T7_SHOES_CLOTH_SET3@1',
+    text: "Grandmaster's Mage Sandals@1",
+    value: 'T7_SHOES_CLOTH_SET3@1',
   },
 ]
