@@ -11,14 +11,23 @@ const App: React.FC = () => {
   const [cities, setCities] = useState([])
   const [qualities, setQualities] = useState([])
   const [loading, setLoading] = useState(true)
+  const [itemNames, setItemNames] = useState(new Map())
 
   const refreshPage = () => {
     window.location.reload(false)
   }
 
   useEffect(() => {
-    getAllData(setOrganizedItems, setLoading, items, qualities, cities)
-  }, [items, qualities, cities])
+    getAllData(
+      itemNames,
+      setItemNames,
+      setOrganizedItems,
+      setLoading,
+      items,
+      qualities,
+      cities
+    )
+  }, [itemNames, items, qualities, cities])
 
   const completeEntriesExist = () =>
     items.length > 0 && cities.length > 0 && qualities.length > 0

@@ -3,6 +3,8 @@ import { PriceClient } from './priceClient'
 import { GameInfoClient } from './gameInfoClient'
 
 export const getAllData = (
+  itemNames: any,
+  setItemNames: any,
   setOrganizedItems: any,
   setLoading: any,
   items: string[],
@@ -11,7 +13,6 @@ export const getAllData = (
 ) => {
   let priceClient = new PriceClient()
   let gameInfoClient = new GameInfoClient()
-  let itemNames = new Map()
   let itemData: string[] = []
 
   if (items.length > 0 && cities.length > 0 && qualities.length > 0) {
@@ -23,12 +24,16 @@ export const getAllData = (
         itemData = itemDataResponse
 
         items.forEach(function (item: any) {
+          if (itemNames.has(item)) return
+
           gameInfoClient
             ._getItemData(item)
             .then((nameDataResponse) => {
-              itemNames.set(
-                nameDataResponse.uniqueName,
-                nameDataResponse.localizedNames['EN-US']
+              setItemNames(
+                itemNames.set(
+                  nameDataResponse.uniqueName,
+                  nameDataResponse.localizedNames['EN-US']
+                )
               )
             })
             .then(() => {
