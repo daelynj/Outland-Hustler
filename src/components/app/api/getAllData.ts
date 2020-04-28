@@ -24,6 +24,8 @@ export const getAllData = (
         itemData = itemDataResponse
 
         items.forEach(function (item: any) {
+          //item = item.replace('@1', '')
+
           if (itemNames.has(item)) return
 
           gameInfoClient
