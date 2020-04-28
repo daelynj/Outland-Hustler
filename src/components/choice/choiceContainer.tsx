@@ -30,9 +30,21 @@ const ChoiceContainer: FunctionComponent<ChoiceContainerProps> = ({
 }) => {
   return (
     <>
-      <DropdownSearch options={items} setChoices={setItems} />
-      <DropdownSearch options={qualities} setChoices={setQualities} />
-      <DropdownSearch options={cities} setChoices={setCities} />
+      <DropdownSearch
+        placeholder={'items'}
+        options={items}
+        setChoices={setItems}
+      />
+      <DropdownSearch
+        placeholder={'qualities'}
+        options={qualities}
+        setChoices={setQualities}
+      />
+      <DropdownSearch
+        placeholder={'cities'}
+        options={cities}
+        setChoices={setCities}
+      />
     </>
   )
 }
