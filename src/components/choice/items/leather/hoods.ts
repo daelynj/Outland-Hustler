@@ -19,7 +19,6 @@ export const hoods = [
     text: "Grandmaster's Mercenary Hood",
     value: 'T7_HEAD_LEATHER_SET1',
   },
-
   {
     key: 'T4_HEAD_LEATHER_SET2',
     text: "Adept's Hunter Hood",
@@ -59,5 +58,65 @@ export const hoods = [
     key: 'T7_HEAD_LEATHER_SET3',
     text: "Grandmaster's Assassin Hood",
     value: 'T7_HEAD_LEATHER_SET3',
+  },
+  {
+    key: 'T4_HEAD_LEATHER_SET1@1',
+    text: "Adept's Mercenary Hood@1",
+    value: 'T4_HEAD_LEATHER_SET1@1',
+  },
+  {
+    key: 'T5_HEAD_LEATHER_SET1@1',
+    text: "Expert's Mercenary Hood@1",
+    value: 'T5_HEAD_LEATHER_SET1@1',
+  },
+  {
+    key: 'T6_HEAD_LEATHER_SET1@1',
+    text: "Master's Mercenary Hood@1",
+    value: 'T6_HEAD_LEATHER_SET1@1',
+  },
+  {
+    key: 'T7_HEAD_LEATHER_SET1@1',
+    text: "Grandmaster's Mercenary Hood@1",
+    value: 'T7_HEAD_LEATHER_SET1@1',
+  },
+  {
+    key: 'T4_HEAD_LEATHER_SET2@1',
+    text: "Adept's Hunter Hood@1",
+    value: 'T4_HEAD_LEATHER_SET2@1',
+  },
+  {
+    key: 'T5_HEAD_LEATHER_SET2@1',
+    text: "Expert's Hunter Hood@1",
+    value: 'T5_HEAD_LEATHER_SET2@1',
+  },
+  {
+    key: 'T6_HEAD_LEATHER_SET2@1',
+    text: "Master's Hunter Hood@1",
+    value: 'T6_HEAD_LEATHER_SET2@1',
+  },
+  {
+    key: 'T7_HEAD_LEATHER_SET2@1',
+    text: "Grandmaster's Hunter Hood@1",
+    value: 'T7_HEAD_LEATHER_SET2@1',
+  },
+  {
+    key: 'T4_HEAD_LEATHER_SET3@1',
+    text: "Adept's Assassin Hood@1",
+    value: 'T4_HEAD_LEATHER_SET3@1',
+  },
+  {
+    key: 'T5_HEAD_LEATHER_SET3@1',
+    text: "Expert's Assassin Hood@1",
+    value: 'T5_HEAD_LEATHER_SET3@1',
+  },
+  {
+    key: 'T6_HEAD_LEATHER_SET3@1',
+    text: "Master's Assassin Hood@1",
+    value: 'T6_HEAD_LEATHER_SET3@1',
+  },
+  {
+    key: 'T7_HEAD_LEATHER_SET3@1',
+    text: "Grandmaster's Assassin Hood@1",
+    value: 'T7_HEAD_LEATHER_SET3@1',
   },
 ]
