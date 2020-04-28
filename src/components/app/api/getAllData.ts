@@ -24,6 +24,8 @@ export const getAllData = (
         itemData = itemDataResponse
 
         items.forEach(function (item: any) {
+          console.log(item)
+          console.log(itemNames)
           if (itemNames.has(item)) return
 
           gameInfoClient
@@ -33,6 +35,13 @@ export const getAllData = (
                 itemNames.set(
                   nameDataResponse.uniqueName,
                   nameDataResponse.localizedNames['EN-US']
+                )
+              )
+
+              setItemNames(
+                itemNames.set(
+                  nameDataResponse.uniqueName + '@1',
+                  nameDataResponse.localizedNames['EN-US'] + '@1'
                 )
               )
             })

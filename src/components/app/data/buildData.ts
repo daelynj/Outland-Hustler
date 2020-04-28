@@ -82,7 +82,7 @@ export function buildData(items: string[], itemNames: any) {
 
   const buildBaseJSON = (item: any) => ({
     item_id: item.item_id,
-    friendly_name: buildFriendlyName(item),
+    friendly_name: itemNames.get(item.item_id),
     city: item.city,
     quality: item.quality,
     city_sell_price_min: null,
@@ -91,14 +91,6 @@ export function buildData(items: string[], itemNames: any) {
     black_market_time: buildDate(item.sell_price_min_date),
     profit: null,
   })
-
-  const buildFriendlyName = (item: any) => {
-    if (item.item_id.includes('@1')) {
-      return itemNames.get(item.item_id.replace('@1', '')) + '@1'
-    } else {
-      return itemNames.get(item.item_id)
-    }
-  }
 
   items.forEach(organize)
 
