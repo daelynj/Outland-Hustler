@@ -19,7 +19,6 @@ export const shoes = [
     text: "Grandmaster's Mercenary Shoes",
     value: 'T7_SHOES_LEATHER_SET1',
   },
-
   {
     key: 'T4_SHOES_LEATHER_SET2',
     text: "Adept's Hunter Shoes",
@@ -59,5 +58,65 @@ export const shoes = [
     key: 'T7_SHOES_LEATHER_SET3',
     text: "Grandmaster's Assassin Shoes",
     value: 'T7_SHOES_LEATHER_SET3',
+  },
+  {
+    key: 'T4_SHOES_LEATHER_SET1@1',
+    text: "Adept's Mercenary Shoes@1",
+    value: 'T4_SHOES_LEATHER_SET1@1',
+  },
+  {
+    key: 'T5_SHOES_LEATHER_SET1@1',
+    text: "Expert's Mercenary Shoes@1",
+    value: 'T5_SHOES_LEATHER_SET1@1',
+  },
+  {
+    key: 'T6_SHOES_LEATHER_SET1@1',
+    text: "Master's Mercenary Shoes@1",
+    value: 'T6_SHOES_LEATHER_SET1@1',
+  },
+  {
+    key: 'T7_SHOES_LEATHER_SET1@1',
+    text: "Grandmaster's Mercenary Shoes@1",
+    value: 'T7_SHOES_LEATHER_SET1@1',
+  },
+  {
+    key: 'T4_SHOES_LEATHER_SET2@1',
+    text: "Adept's Hunter Shoes@1",
+    value: 'T4_SHOES_LEATHER_SET2@1',
+  },
+  {
+    key: 'T5_SHOES_LEATHER_SET2@1',
+    text: "Expert's Hunter Shoes@1",
+    value: 'T5_SHOES_LEATHER_SET2@1',
+  },
+  {
+    key: 'T6_SHOES_LEATHER_SET2@1',
+    text: "Master's Hunter Shoes@1",
+    value: 'T6_SHOES_LEATHER_SET2@1',
+  },
+  {
+    key: 'T7_SHOES_LEATHER_SET2@1',
+    text: "Grandmaster's Hunter Shoes@1",
+    value: 'T7_SHOES_LEATHER_SET2@1',
+  },
+  {
+    key: 'T4_SHOES_LEATHER_SET3@1',
+    text: "Adept's Assassin Shoes@1",
+    value: 'T4_SHOES_LEATHER_SET3@1',
+  },
+  {
+    key: 'T5_SHOES_LEATHER_SET3@1',
+    text: "Expert's Assassin Shoes@1",
+    value: 'T5_SHOES_LEATHER_SET3@1',
+  },
+  {
+    key: 'T6_SHOES_LEATHER_SET3@1',
+    text: "Master's Assassin Shoes@1",
+    value: 'T6_SHOES_LEATHER_SET3@1',
+  },
+  {
+    key: 'T7_SHOES_LEATHER_SET3@1',
+    text: "Grandmaster's Assassin Shoes@1",
+    value: 'T7_SHOES_LEATHER_SET3@1',
   },
 ]
