@@ -24,8 +24,6 @@ export const getAllData = (
         itemData = itemDataResponse
 
         items.forEach(function (item: any) {
-          console.log(item)
-          console.log(itemNames)
           if (itemNames.has(item)) return
 
           gameInfoClient
