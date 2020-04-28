@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './css/app.css'
 import ItemContainer from '../item/itemContainer'
-import RefreshButton from '../refresh/refreshButton'
 import ChoiceContainer from '../choice/choiceContainer'
 import { getAllData } from './api/getAllData'
 
@@ -12,10 +11,6 @@ const App: React.FC = () => {
   const [qualities, setQualities] = useState([])
   const [loading, setLoading] = useState(true)
   const [itemNames, setItemNames] = useState(new Map())
-
-  const refreshPage = () => {
-    window.location.reload(false)
-  }
 
   useEffect(() => {
     getAllData(
@@ -34,9 +29,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div className="refresh">
-        <RefreshButton handleEvent={refreshPage} />
-      </div>
       <div className="choice_container">
         <ChoiceContainer
           setItems={setItems}
