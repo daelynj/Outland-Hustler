@@ -19,7 +19,6 @@ export const helmets = [
     text: "Grandmaster's Soldier Helmet",
     value: 'T7_HEAD_PLATE_SET1',
   },
-
   {
     key: 'T4_HEAD_PLATE_SET2',
     text: "Adept's Knight Helmet",
@@ -59,5 +58,65 @@ export const helmets = [
     key: 'T7_HEAD_PLATE_SET3',
     text: "Grandmaster's Guardian Helmet",
     value: 'T7_HEAD_PLATE_SET3',
+  },
+  {
+    key: 'T4_HEAD_PLATE_SET1@1',
+    text: "Adept's Soldier Helmet@1",
+    value: 'T4_HEAD_PLATE_SET1@1',
+  },
+  {
+    key: 'T5_HEAD_PLATE_SET1@1',
+    text: "Expert's Soldier Helmet@1",
+    value: 'T5_HEAD_PLATE_SET1@1',
+  },
+  {
+    key: 'T6_HEAD_PLATE_SET1@1',
+    text: "Master's Soldier Helmet@1",
+    value: 'T6_HEAD_PLATE_SET1@1',
+  },
+  {
+    key: 'T7_HEAD_PLATE_SET1@1',
+    text: "Grandmaster's Soldier Helmet@1",
+    value: 'T7_HEAD_PLATE_SET1@1',
+  },
+  {
+    key: 'T4_HEAD_PLATE_SET2@1',
+    text: "Adept's Knight Helmet@1",
+    value: 'T4_HEAD_PLATE_SET2@1',
+  },
+  {
+    key: 'T5_HEAD_PLATE_SET2@1',
+    text: "Expert's Knight Helmet@1",
+    value: 'T5_HEAD_PLATE_SET2@1',
+  },
+  {
+    key: 'T6_HEAD_PLATE_SET2@1',
+    text: "Master's Knight Helmet@1",
+    value: 'T6_HEAD_PLATE_SET2@1',
+  },
+  {
+    key: 'T7_HEAD_PLATE_SET2@1',
+    text: "Grandmaster's Knight Helmet@1",
+    value: 'T7_HEAD_PLATE_SET2@1',
+  },
+  {
+    key: 'T4_HEAD_PLATE_SET3@1',
+    text: "Adept's Guardian Helmet@1",
+    value: 'T4_HEAD_PLATE_SET3@1',
+  },
+  {
+    key: 'T5_HEAD_PLATE_SET3@1',
+    text: "Expert's Guardian Helmet@1",
+    value: 'T5_HEAD_PLATE_SET3@1',
+  },
+  {
+    key: 'T6_HEAD_PLATE_SET3@1',
+    text: "Master's Guardian Helmet@1",
+    value: 'T6_HEAD_PLATE_SET3@1',
+  },
+  {
+    key: 'T7_HEAD_PLATE_SET3@1',
+    text: "Grandmaster's Guardian Helmet@1",
+    value: 'T7_HEAD_PLATE_SET3@1',
   },
 ]
