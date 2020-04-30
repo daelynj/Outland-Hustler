@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './css/app.css'
 import ItemContainer from '../item/itemContainer'
 import ChoiceContainer from '../choice/choiceContainer'
-import { getAllData } from './api/getAllData'
+import { getAllData } from '../../api/getAllData'
 
 const App: React.FC = () => {
   const [organizedItems, setOrganizedItems] = useState(new Map())

@@ -1,4 +1,4 @@
-import { buildData } from '../data/buildData'
+import { buildData } from '../components/app/data/buildData'
 import { PriceClient } from './priceClient'
 import { GameInfoClient } from './gameInfoClient'
 
