@@ -5,6 +5,7 @@ import ChoiceContainer from '../choice/choiceContainer'
 import { getAllData } from '../../api/getAllData'
 import LoadingIndicator from '../spinner/loadingIndicator'
 import { usePromiseTracker } from 'react-promise-tracker'
+import { PresetContainer } from '../preset/presetContainer'
 
 const App: React.FC = () => {
   const [organizedItems, setOrganizedItems] = useState(new Map())
@@ -30,6 +31,16 @@ const App: React.FC = () => {
 
   return (
     <>
+      <div className="preset_container">
+        <PresetContainer
+          items={items}
+          qualities={qualities}
+          cities={cities}
+          setItems={setItems}
+          setQualities={setQualities}
+          setCities={setCities}
+        />
+      </div>
       <div className="choice_container">
         <ChoiceContainer
           setItems={setItems}

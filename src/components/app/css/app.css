@@ -1,8 +1,12 @@
-.choice_container {
+.preset_container {
   margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.choice_container {
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 0.5%;
+  margin-bottom: 1%;
   border: 2px solid black;
   display: grid;
   grid-template-columns: 34% 32% 34%;
