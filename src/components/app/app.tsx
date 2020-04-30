@@ -3,21 +3,22 @@ import './css/app.css'
 import ItemContainer from '../item/itemContainer'
 import ChoiceContainer from '../choice/choiceContainer'
 import { getAllData } from '../../api/getAllData'
+import LoadingIndicator from '../spinner/loadingIndicator'
+import { usePromiseTracker } from 'react-promise-tracker'
 
 const App: React.FC = () => {
   const [organizedItems, setOrganizedItems] = useState(new Map())
   const [items, setItems] = useState([])
   const [cities, setCities] = useState([])
   const [qualities, setQualities] = useState([])
-  const [loading, setLoading] = useState(true)
   const [itemNames, setItemNames] = useState(new Map())
+  const { promiseInProgress } = usePromiseTracker()
 
   useEffect(() => {
     getAllData(
       itemNames,
       setItemNames,
       setOrganizedItems,
-      setLoading,
       items,
       qualities,
       cities
@@ -37,7 +38,8 @@ const App: React.FC = () => {
         />
       </div>
       <div className="item_container">
-        {!loading && completeEntriesExist() && (
+        {promiseInProgress && <LoadingIndicator />}
+        {!promiseInProgress && completeEntriesExist() && (
           <ItemContainer items={organizedItems} />
         )}
       </div>
