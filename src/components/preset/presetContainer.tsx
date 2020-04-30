@@ -21,21 +21,40 @@ export const PresetContainer: FunctionComponent<PresetContainerProps> = ({
   setCities,
 }) => {
   const handleSave = () => {
-    LOCAL_STORAGE.setItem('items', items.join())
-    LOCAL_STORAGE.setItem('qualities', qualities.join())
-    LOCAL_STORAGE.setItem('cities', cities.join())
+    if (items.length > 0 || qualities.length > 0 || cities.length > 0) {
+      LOCAL_STORAGE.setItem('items', items.join())
+      LOCAL_STORAGE.setItem('qualities', qualities.join())
+      LOCAL_STORAGE.setItem('cities', cities.join())
+    }
+  }
+
+  const checkIfUndefined = (key: string) => {
+    let localStorageEntry = LOCAL_STORAGE.getItem(key)
+    return localStorageEntry === null ? [] : localStorageEntry.split(',')
   }
 
   const handleLoad = () => {
-    setItems(LOCAL_STORAGE.getItem('items')?.split(','))
-    setQualities(LOCAL_STORAGE.getItem('qualities')?.split(','))
-    setCities(LOCAL_STORAGE.getItem('cities')?.split(','))
+    let presetItems = checkIfUndefined('items')
+    let presetQualities = checkIfUndefined('qualities')
+    let presetCities = checkIfUndefined('cities')
+
+    setItems(presetItems)
+    setQualities(presetQualities)
+    setCities(presetCities)
+  }
+
+  const handleClear = () => {
+    LOCAL_STORAGE.clear()
+    setItems([])
+    setQualities([])
+    setCities([])
   }
 
   return (
     <span className="buttons">
       <button onClick={handleSave}>Save Preset</button>
       <button onClick={handleLoad}>Load Preset</button>
+      <button onClick={handleClear}>Clear Preset</button>
     </span>
   )
 }
