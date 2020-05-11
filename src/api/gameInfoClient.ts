@@ -2,7 +2,7 @@ import { fetchResource } from './fetchResource'
 
 export class GameInfoClient {
   BASE_URL = 'https://gameinfo.albiononline.com/api/gameinfo/'
-  PROXY_URL = 'https://albion-cors-anywhere.herokuapp.com/'
+  PROXY_URL = 'https://outland-hustler.herokuapp.com/'
 
   _getItemData = (item: string) => fetchResource(this.buildItemDataURL(item))
 
